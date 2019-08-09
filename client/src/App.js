@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
-import RegForm from "./components/Form";
+import FormikForm from "./components/Form";
+import Display from "./components/Display";
 
 function App() {
+  const [count, setCount] = useState(0);
+
+  const Add = (numA, numB) => {
+    return numA + numB;
+  };
+
   return (
     <div className="App">
-      <RegForm />
+      <FormikForm />
+      <Display count={count} setCount={setCount} />
     </div>
   );
 }
